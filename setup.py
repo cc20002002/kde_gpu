@@ -8,6 +8,7 @@ setup(
     version=__version__,
     description="We implemented nadaraya waston kernel density and kernel conditional probability estimator using cuda through cupy. It is much faster than cpu version but it requires GPU with high memory.",
     long_description=readme,
+    long_description_content_type='text/markdown',
     author="Chen Chen",
     author_email="chen.chen.adl@gmail.com",
     url="https://github.com/cc20002002/kde_gpu",
