@@ -16,7 +16,7 @@ See https://github.com/cupy/cupy
 
 Similar to [scipy.kde_gaussian](https://docs.scipy.org/doc/scipy/reference/generated/scipy.stats.gaussian_kde.html) and [statsmodels.nonparametric.kernel_density.KDEMultivariateConditional](https://www.statsmodels.org/stable/generated/statsmodels.nonparametric.kernel_density.KDEMultivariateConditional.html), we implemented nadaraya waston kernel density and kernel conditional probability estimator using cuda through cupy. However, it is much faster than cpu version and it maximise the use of GPU memory.
 
-1. Make a folder with name "data" in current directory. Then copy ORL and CroppedYaleB dataset inside. Please make sure you have the following file tree structure:
+1. Make a folder with name "data" in current directory. Then copy ORL and CroppedYaleB dataset inside. Please make sure you have the following file tree structure:  
      |--- kde_gpu\\  
      ***|--- __version__.py \\  
      ***|--- nadaraya_watson.py \\  
