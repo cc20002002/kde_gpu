@@ -38,13 +38,22 @@ We implemented nadaraya waston kernel density and kernel conditional probability
 Please note that if the version number of installed package in your machine is lower than the stated version number, `pip` will uninstall your out-of-date package and install the one with version number greater than or equal to the stated one in `setup.py`.
 
 3. 
+#!/usr/bin/env python3
+# -*- coding: utf-8 -*-
+"""
+Created on Mon Aug 19 14:29:33 2019
+
+@author: chenc
+"""
+
+#import kernel_smoothing
 from scipy import stats
 import pandas as pd
 import cupy as cp
 import numpy as np
 import time
 
-#compare speed with scipy package using CPU
+
 rv = stats.expon(0,1)
 
 x = rv.rvs(size=10000)
@@ -59,6 +68,7 @@ print(time.time()-t1)
 t1=time.time()
 kde_cupy=kde(cp.asarray(x.T),bw_method='silverman')
 print(time.time()-t1)
+
 
 
 df = pd.DataFrame({'x1':x,'kde_scipy':kde_scipy,
