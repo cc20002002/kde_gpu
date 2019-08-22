@@ -12,7 +12,6 @@ setup(
     author_email="chen.chen.adl@gmail.com",
     url="https://github.com/cc20002002/kde_gpu",
     packages=find_packages(),
-    package_dir={"kde_gpu": "kde_gpu"},
     include_package_data=True,   
     install_requires=[
         "numpy>=1.14.0",
