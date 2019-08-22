@@ -16,7 +16,7 @@ See https://github.com/cupy/cupy
 
 Similar to [scipy.kde_gaussian](https://docs.scipy.org/doc/scipy/reference/generated/scipy.stats.gaussian_kde.html) and [statsmodels.nonparametric.kernel_density.KDEMultivariateConditional](https://www.statsmodels.org/stable/generated/statsmodels.nonparametric.kernel_density.KDEMultivariateConditional.html), we implemented nadaraya waston kernel density and kernel conditional probability estimator using cuda through cupy. However, it is much faster than cpu version and it maximise the use of GPU memory.
 
-1. Make a folder with name "data" in current directory. Then copy ORL and CroppedYaleB dataset inside. Please make sure you have the following file tree structure:  
+File tree structure:  
      |--- kde_gpu\\  
      ***|--- __version__.py \\  
      ***|--- nadaraya_watson.py \\  
@@ -25,10 +25,12 @@ Similar to [scipy.kde_gaussian](https://docs.scipy.org/doc/scipy/reference/gener
      *|--- example.py \\  
      *|--- README.md \\  
 
+1. Install cupy (i.e. numpy equivalent using CUDA GPU acceleration) according to https://docs-cupy.chainer.org/en/stable/install.html#using-pip 
+
 2. Install `kde_gpu` with following command: (Please use `pip3` if the default `python` in your computer is `python2`)
 
    ```
-   $ pip install -e .
+   $ pip install kde_gpu
    ```
  This command will run  `setup.py` where we specify the dependencies required to run  `nmf`. The dependencies we require are:
 
@@ -52,23 +54,22 @@ import cupy as cp
 import numpy as np
 import time
 
-
+#true distribution is an exponential
 rv = stats.expon(0,1)
-
 x = rv.rvs(size=10000)
 
 density_real = rv.pdf(x)
 
+#using scipy package
 t1=time.time()
 kde_scipy=stats.gaussian_kde(x.T,bw_method='silverman')
 kde_scipy=kde_scipy(x.T)
 print(time.time()-t1)
 
+#use kde_gpu package
 t1=time.time()
 kde_cupy=kde(cp.asarray(x.T),bw_method='silverman')
 print(time.time()-t1)
-
-
 
 df = pd.DataFrame({'x1':x,'kde_scipy':kde_scipy,
                    'kde_cupy':cp.asnumpy(kde_cupy).squeeze(),'real density':density_real})
@@ -78,6 +79,7 @@ df['cupy_mean_absolute_error']=np.abs(df['kde_cupy']-df['real density'])
 print(df.mean())
 
 
+#true x is truncated normal and true y conditional on x is a uniform distribution, which is independent of x.
 rv = stats.truncnorm(-3,2,30,10)
 nsample=10000
 x = cp.asarray(rv.rvs(nsample))
