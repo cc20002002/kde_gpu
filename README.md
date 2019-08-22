@@ -18,9 +18,9 @@ Similar to scipy.kde_gaussian(https://docs.scipy.org/doc/scipy/reference/generat
 
 1. Make a folder with name "data" in current directory. Then copy ORL and CroppedYaleB dataset inside. Please make sure you have the following file tree structure:
      |--- kde_gpu\\
-     	|--- \__version__.py \\
+     	|--- __version__.py \\
       	|--- nadaraya_watson.py \\
-	|--- conditional_probability.py \\
+		|--- conditional_probability.py \\
       |--- setup.py \\
       |--- example.py \\
       |--- README.md \\
@@ -37,13 +37,10 @@ Similar to scipy.kde_gaussian(https://docs.scipy.org/doc/scipy/reference/generat
 
 Please note that if the version number of installed package in your machine is lower than the stated version number, `pip` will uninstall your out-of-date package and install the one with version number greater than or equal to the stated one in `setup.py`.
 
-3. 
-#!/usr/bin/env python3
-# -*- coding: utf-8 -*-
+Example
+------------
 """
-Created on Mon Aug 19 14:29:33 2019
-
-@author: chenc
+@author: chen.chen.adl@gmail.com
 """
 
 #import kernel_smoothing
