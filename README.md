@@ -22,6 +22,7 @@ We implemented nadaraya waston kernel density and kernel conditional probability
       	|--- nadaraya_watson.py \\
 	|--- conditional_probability.py \\
       |--- setup.py \\
+      |--- example.py \\
       |--- README.md \\
 
  2. Install `kde_gpu` with following command: (Please use `pip3` if the default `python` in your computer is `python2`)
