@@ -1,6 +1,3 @@
-#!/usr/bin/env python
-"""Setup environment for nmf."""
-
 from setuptools import setup, find_packages
 
 exec(open("kde_gpu/__version__.py").read())
@@ -13,14 +10,13 @@ setup(
     long_description=readme,
     author="Chen Chen",
     author_email="chen.chen.adl@gmail.com",
-    url="https://github.com/JoyceXinyueWang/nmf",
+    url="https://github.com/cc20002002/kde_gpu",
     packages=find_packages(),
     package_dir={"kde_gpu": "kde_gpu"},
     include_package_data=True,   
     install_requires=[
         "numpy>=1.14.0",
         "scipy>=1.0.0",
-        "cupy>=6.2.0",
         "pandas>=0.20.2",
     ],
     license="MIT License",

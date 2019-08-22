@@ -14,9 +14,9 @@ Running Environment Setup
 We implemented nadaraya waston kernel density and kernel conditional probability estimator using cuda through cupy. It is much faster than cpu version but it requires GPU with higher memory.
 
 1. Make a folder with name "data" in current directory. Then copy ORL and CroppedYaleB dataset inside. Please make sure you have the following file tree structure:
-     |--- nmf \\
+     |--- kde_gpu\\
      	|--- \__version__.py \\
-      	|--- main.py \\
+      	|--- kde_gpu.py \\
       |--- setup.py \\
       |--- README.md \\
 
@@ -27,7 +27,6 @@ We implemented nadaraya waston kernel density and kernel conditional probability
    ```
  This command will run  `setup.py` where we specify the dependencies required to run  `nmf`. The dependencies we require are:
 
-           "cupy>=6.2.0",
            "scipy>=1.0.0",
            "pandas>=0.20.2",
 
