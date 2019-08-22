@@ -6,7 +6,7 @@ Home-page: https://github.com/cc20002002/kde_gpu
 Author: Chen Chen
 Author-email: chen.chen.adl@gmail.com
 License: MIT License
-Description: ﻿
+Description: ï»¿
         # kde_gpu
         
         Kernel density estimator using Nadaraya-Watson with GPU (CUDA)
