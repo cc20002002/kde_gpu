@@ -32,7 +32,7 @@ File tree structure:
    ```
    $ pip install kde_gpu
    ```
- This command will run  `setup.py` where we specify the dependencies required to run  `nmf`. The dependencies we require are:
+ This command will run  `setup.py` where we specify the dependencies required to run  `kde_gpu`. The dependencies we require are:
 
            "scipy>=1.0.0",
            "pandas>=0.20.2",
