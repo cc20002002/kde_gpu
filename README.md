@@ -10,13 +10,17 @@ Chen Chen
 
 Running Environment Setup
 ------------
+You have to have cupy installed!!
+See https://github.com/cupy/cupy
+
 
 We implemented nadaraya waston kernel density and kernel conditional probability estimator using cuda through cupy. It is much faster than cpu version but it requires GPU with higher memory.
 
 1. Make a folder with name "data" in current directory. Then copy ORL and CroppedYaleB dataset inside. Please make sure you have the following file tree structure:
      |--- kde_gpu\\
      	|--- \__version__.py \\
-      	|--- kde_gpu.py \\
+      	|--- nadaraya_watson.py \\
+	|--- conditional_probability.py \\
       |--- setup.py \\
       |--- README.md \\
 
